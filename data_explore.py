@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from sksurv.nonparametric import kaplan_meier_estimator
 
-csv_files = ["array_TF_success_time.csv", "array_TF_fail_time.csv"]
+csv_files = ["precomputed_data_for_survival_model/array_TF_success_time.csv", "precomputed_data_for_survival_model/array_TF_fail_time.csv"]
 for csv in range(len(csv_files)):
     # Read the CSV file into a Pandas DataFrame
     df = pd.read_csv(csv_files[csv])
@@ -32,9 +32,14 @@ for csv in range(len(csv_files)):
     )
     #print("time:", time)
     #print("survival_prob:", survival_prob)
-
-    half_survival_time = np.interp(0.5, survival_prob[::-1], time[::-1]) #linearly extrapolate to find the time at which the estimated probability of survival is 0.5
+    
+    #if there is not a survival prob of .5 linearly extrapolate otherwise set the half_survival_time to the time at which the estimated probability of survival is 0.5
+    if 0.5 not in survival_prob:
+        half_survival_time = np.interp(0.5, survival_prob[::-1], time[::-1]) #linearly extrapolate to find the time at which the estimated probability of survival is 0.5
     #if there is a lot of censored data points, the estimated probability of survival may not reach 0.5
+
+    else:
+        half_survival_time = time[np.where(survival_prob == 0.5)[0][0]]
 
     # Plot the Kaplan-Meier estimator
     plt.step(time, survival_prob, where="post")
