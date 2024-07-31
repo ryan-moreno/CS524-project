@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# To run via slurm, first output the ipynb notebook to python using `jupyter nbconvert --to script optimization_model.ipynb`
+# To run via slurm, first output the ipynb notebook to python using `jupyter nbconvert --to script brute_force_model.ipynb`
 
 # In[27]:
 
