@@ -9,4 +9,4 @@
 # Launch via:
 # sbatch launch_optimization_slurm.sh
 
-python optimization_model.py
+python brute_force_model.py
