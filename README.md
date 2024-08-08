@@ -23,4 +23,4 @@ See `precompute_combinations/` folder for details.
 
 We implemented the model by using brute force to check the probability of success for all possible values of $s$. This can be launched on the SSCC servers via slurm. See `optimization/brute_force_model.ipynb` for the model and `optimization/visualize_results.ipynb` for analysis of our results.
 
-We attempted to implement the model using open source solvers but did not find a sufficient solver to handle a non-convex, mixed integer, stochastic program. The attempt at using a solver can be found at `optimization/model_using_solver.ipynb`, but is not functional.
+We attempted to implement the model using open source solvers but did not find a sufficient solver to handle a non-convex, mixed integer, stochastic program. The attempt at using a solver can be found at `do_not_use/model_using_solver.ipynb`, but is not functional.
