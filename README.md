@@ -4,6 +4,7 @@ Overleaf links:
 
 - [Project proposal](https://www.overleaf.com/project/668f10d26a7e45ffca7ef942)
 - [Progress report](https://www.overleaf.com/project/669e7eccbb1e44065a578440)
+- click here: [Final Report](https://github.com/ryan-moreno/CS524-project/tree/main/report)
 
 ## Computing goal scoring probabilities
 
